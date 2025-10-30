@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: ./app
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    environment:
+      - VITE_LLM_MODEL=ai/smollm2:360M-Q4_K_M
+      - VITE_LLM_BASE_URL=
